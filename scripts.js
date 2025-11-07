@@ -1,16 +1,49 @@
-// 🍔 Mobile Nav Toggle
-const toggle = document.querySelector('.nav-toggle');
-const menu = document.querySelector('.nav-menu');
-
-if (toggle && menu) {
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
+// 🎤 Fetch Bio
+fetch(`https://wux05uca.api.sanity.io/v1/data/query/production?query=${encodeURIComponent('*[_type == "bio"][0]{content}')}`)
+  .then(res => res.json())
+  .then(({ result }) => {
+    document.getElementById('bio-content').textContent = result.content;
   });
-}
 
-// 🔍 Lightbox Image Viewer
-document.querySelectorAll('.lightbox').forEach(link => {
-  link.addEventListener('click', e => {
+// 🎶 Fetch Tracks
+fetch(`https://wux05uca.api.sanity.io/v1/data/query/production?query=${encodeURIComponent('*[_type == "track"]{title, genre, "audioUrl": audio.asset->url}')}`)
+  .then(res => res.json())
+  .then(({ result }) => {
+    const container = document.getElementById('track-list');
+    result.forEach(track => {
+      const div = document.createElement('div');
+      div.className = 'track';
+      div.innerHTML = `
+        <p><strong>${track.title}</strong> <span>${track.genre}</span></p>
+        <audio controls src="${track.audioUrl}"></audio>
+      `;
+      container.appendChild(div);
+    });
+  });
+
+// 📸 Fetch Gallery Images
+fetch(`https://wux05uca.api.sanity.io/v1/data/query/production?query=${encodeURIComponent('*[_type == "galleryImage"]{caption, "imageUrl": image.asset->url}')}`)
+  .then(res => res.json())
+  .then(({ result }) => {
+    const container = document.getElementById('gallery-grid');
+    result.forEach(img => {
+      const a = document.createElement('a');
+      a.href = img.imageUrl;
+      a.className = 'lightbox';
+      a.innerHTML = `<img src="${img.imageUrl}" alt="${img.caption}" loading="lazy" />`;
+      container.appendChild(a);
+    });
+  });
+
+// 🍔 Mobile Nav Toggle
+document.querySelector('.nav-toggle')?.addEventListener('click', () => {
+  document.querySelector('.nav-menu')?.classList.toggle('active');
+});
+
+// 🔍 Lightbox Viewer
+document.addEventListener('click', e => {
+  const link = e.target.closest('.lightbox');
+  if (link) {
     e.preventDefault();
     const img = document.createElement('img');
     img.src = link.href;
@@ -20,17 +53,15 @@ document.querySelectorAll('.lightbox').forEach(link => {
     overlay.appendChild(img);
     overlay.onclick = () => document.body.removeChild(overlay);
     document.body.appendChild(overlay);
-  });
+  }
 });
 
 // 🔝 Scroll-to-Top Button
 const scrollBtn = document.getElementById('scrollTop');
-
 if (scrollBtn) {
   window.addEventListener('scroll', () => {
     scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
   });
-
   scrollBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
