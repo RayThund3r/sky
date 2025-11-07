@@ -11,16 +11,6 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="images/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXX');
-</script>
-
 </head>
 <body>
   <header class="hero">
@@ -30,63 +20,30 @@
     </div>
   </header>
 
-<nav role="navigation">
-  <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-  <ul class="nav-menu">
-    <li><a href="#bio">Bio</a></li>
-    <li><a href="#music">Music</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#audio">Audio</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+  <nav role="navigation">
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <ul class="nav-menu">
+      <li><a href="#bio">Bio</a></li>
+      <li><a href="#tracks">Tracks</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
   <main>
     <section id="bio">
       <h2>🎤 About Snowy</h2>
-      <p>Snowy Kyt is a Ugandan solo musician who passionately blends Afrobeats and world music into rhythms that move both soul and body. As a cultural ambassador, he’s journeyed across countries sharing African dances, folk songs, and instruments—uniting people through the universal language of music and movement. His tracks often spark viral trends and reflect the vibrant pulse of East Africa’s music scene.</p>
+      <div id="bio-content"></div>
     </section>
 
-    <section id="music">
+    <section id="tracks">
       <h2>🎶 Featured Tracks</h2>
-      <div class="track-list">
-        <div class="track">🔥 <strong>Insane</strong> <span>Afrobeats / TikTok Hit</span></div>
-        <div class="track">🎤 <strong>Collab with Goodyfie Eddy</strong> <span>Dancehall / Fusion</span></div>
-        <div class="track">🌍 <strong>Global Pulse</strong> <span>World / Afro-fusion</span></div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>🎬 Creative Projects</h2>
-      <ul>
-        <li>🌐 Cultural exchange tour across East Africa</li>
-        <li>🎞️ Soundtrack contributions to regional film projects</li>
-        <li>🎼 Collaborative EP with Cin Monta and Goodyfie Eddy</li>
-      </ul>
-    </section>
-
-    <section id="audio">
-      <h2>🎧 Listen to Snowy</h2>
-      <div class="audio-player">
-        <p><strong>Insane</strong></p>
-        <audio controls>
-          <source src="audio/insane.mp3" type="audio/mpeg" />
-          Your browser does not support the audio element.
-        </audio>
-      </div>
+      <div id="track-list"></div>
     </section>
 
     <section id="gallery">
       <h2>📸 Photo Gallery</h2>
-      <div class="gallery-grid">
-        <a href="images/1.jpg" class="lightbox"><img src="images/1.jpg" alt="Live performance" loading="lazy" /></a>
-        <a href="images/2.jpg" class="lightbox"><img src="images/2.jpg" alt="Studio session" loading="lazy" /></a>
-        <a href="images/3.jpg" class="lightbox"><img src="images/3.jpg" alt="Album artwork" loading="lazy" /></a>
-        <a href="images/4.jpg" class="lightbox"><img src="images/4.jpg" alt="Backstage moment" loading="lazy" /></a>
-        <a href="images/5.jpg" class="lightbox"><img src="images/5.jpg" alt="Crowd energy" loading="lazy" /></a>
-        <a href="images/6.jpg" class="lightbox"><img src="images/6.jpg" alt="Music gear" loading="lazy" /></a>
-      </div>
+      <div id="gallery-grid"></div>
     </section>
 
     <section id="contact">
@@ -96,21 +53,19 @@
       <p>Location: Kampala, Uganda</p>
     </section>
 
-<form action="https://formspree.io/f/yourFormID" method="POST">
-  <input type="text" name="name" placeholder="Your name" required />
-  <input type="email" name="email" placeholder="Your email" required />
-  <textarea name="message" placeholder="Your message" required></textarea>
-  <button type="submit">Send</button>
-</form>
+    <form action="https://formspree.io/f/yourFormID" method="POST">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Your email" required />
+      <textarea name="message" placeholder="Your message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
   </main>
 
   <footer>
     <p>© 2025 Snowy Kyt. Crafted with rhythm and soul.</p>
   </footer>
 
-  
-<button id="scrollTop" aria-label="Scroll to top">↑</button>
-
-<script src="scripts.js"></script>
+  <button id="scrollTop" aria-label="Scroll to top">↑</button>
+  <script src="scripts.js"></script>
 </body>
 </html>
