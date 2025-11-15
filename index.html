@@ -11,17 +11,24 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="images/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <header class="hero">
-    <div class="overlay">
-      <h1>Snowy Kyt</h1>
-      <p>Afrobeats • Dancehall • Cultural Ambassador</p>
-    </div>
-  </header>
 
-  <nav role="navigation">
-    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+<header class="hero">
+  <div class="overlay">
+    <h1 class="hero-title">Snowy Kyt</h1>
+    <p>Afrobeats • Dancehall • Cultural Ambassador</p>
+    <a href="#tracks" class="cta-button">🎧 Listen Now</a>
+  </div>
+</header>
+
+<div id="nav-bar">
+  <nav class="nav-container">
+    <div class="nav-top">
+      <div class="branding">Snowy Kyt</div>
+      <button class="nav-toggle">☰</button>
+    </div>
     <ul class="nav-menu">
       <li><a href="#bio">Bio</a></li>
       <li><a href="#tracks">Tracks</a></li>
@@ -29,31 +36,52 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
+</div>
 
   <main>
     <section id="bio">
       <h2>🎤 About Snowy</h2>
-      <div id="bio-content"></div>
+      <div id="bio-content">Loading bio...</div>
     </section>
 
     <section id="tracks">
       <h2>🎶 Featured Tracks</h2>
-      <div id="track-list"></div>
+      <div id="track-list">Loading tracks...</div>
+
     </section>
 
     <section id="gallery">
       <h2>📸 Photo Gallery</h2>
-      <div id="gallery-grid"></div>
-    </section>
+      <div id="gallery-grid">Loading gallery...</div>
 
-    <section id="contact">
-      <h2>📬 Contact Snowy</h2>
-      <p>Email: <a href="mailto:snowy.kyt.music@example.com">snowy.kyt.music@example.com</a></p>
-      <p>Instagram: <a href="https://instagram.com/snowykyt" target="_blank">@snowykyt</a></p>
-      <p>Location: Kampala, Uganda</p>
     </section>
+<section id="contact">
+  <h2>📬 Contact Snowy</h2>
+  <p>Phone: <a href="tel:+17722785401">+1 (772) 278-5401</a></p>
+  <p>Email: <a href="mailto:ngabezaayaeric@gmail.com">ngabezaayaeric@gmail.com</a></p>
 
-    <form action="https://formspree.io/f/yourFormID" method="POST">
+  <div class="social-links">
+    <a href="https://facebook.com/snowykyt" target="_blank" rel="noopener">
+      <i class="fab fa-facebook"></i>
+      <span>snowykyt</span>
+    </a>
+    <a href="https://instagram.com/snowykyt" target="_blank" rel="noopener">
+      <i class="fab fa-instagram"></i>
+      <span>snowykyt</span>
+    </a>
+    <a href="https://youtube.com/@snowykyt" target="_blank" rel="noopener">
+      <i class="fab fa-youtube"></i>
+      <span>snowykyt</span>
+    </a>
+    <a href="https://tiktok.com/@snowykyt" target="_blank" rel="noopener">
+      <i class="fab fa-tiktok"></i>
+      <span>snowykyt</span>
+    </a>
+  </div>
+</section>
+
+    <h2 class="form-title">Send a Message</h2>
+    <form action="https://formspree.io/f/xpwkdyba" method="POST">
       <input type="text" name="name" placeholder="Your name" required />
       <input type="email" name="email" placeholder="Your email" required />
       <textarea name="message" placeholder="Your message" required></textarea>
@@ -61,11 +89,15 @@
     </form>
   </main>
 
+  
   <footer>
     <p>© 2025 Snowy Kyt. Crafted with rhythm and soul.</p>
   </footer>
-
+  
+   <button id="darkToggle" aria-label="Toggle dark mode">🌙</button>
   <button id="scrollTop" aria-label="Scroll to top">↑</button>
+  
   <script src="scripts.js"></script>
+  <script src="https://unpkg.com/wavesurfer.js"></script>
 </body>
 </html>
