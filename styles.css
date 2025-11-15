@@ -1,12 +1,15 @@
 /* 🌌 Global Styling */
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Montserrat', sans-serif;
   background: white;
   color: #222;
   transition: background-color 0.3s ease, color 0.3s ease;
   line-height: 1.6;
   width:100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 html {
@@ -695,4 +698,5 @@ body.dark-mode .cta-button:hover {
 .social-links i {
   font-size: 24px;
 }
+
 
