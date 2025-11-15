@@ -6,6 +6,7 @@ body {
   color: #222;
   transition: background-color 0.3s ease, color 0.3s ease;
   line-height: 1.6;
+  width:100%;
 }
 
 html {
@@ -694,3 +695,4 @@ body.dark-mode .cta-button:hover {
 .social-links i {
   font-size: 24px;
 }
+
